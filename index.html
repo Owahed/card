@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>E-commerce</title>
+    <!-- bootstrap@5 -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
+    <!-- font-awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css" integrity="sha512-HK5fgLBL+xu6dm/Ii3z4xhlSUyZgTT9tuc/hSrtw6uzJOvgRr2a9jyxxT1ely+B+xFAmJKVSTbpM/CuL7qxO8w==" crossorigin="anonymous" />
+
+
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <div>
+            <nav class="navbar navbar-light ">
+                <div class="container ">
+                  <a href="#" class="navbar-brand"><img src="pic/logo.png" alt=""></a>
+                  <form class="d-flex ">
+                    <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                    <button class="btn btn-outline-primary" type="submit">Search</button>
+                  </form>
+                </div>
+<!-- 
+              <div class="header-icon d-flex">
+                <a href="#"><i class="fas fa-shopping-cart "></i></a>
+                <a href="#"><i class="fas fa-user "></i></a>
+
+                <p>Welcome!</p>
+                <a href="#">Sign in | Register</a>
+              </div>
+              <div class="p-2 header-text">
+                
+              </div> -->
+              </nav>
+        </div>
+    </header>
+
+    <div class="shopping-card bg-light d-flex align-items-center">
+      <h2>Shopping cart</h2>
+    </div>
+
+    <main class="container mb-5">
+      <div class="row">
+        <div class="col-lg-8">
+          <table class="table ">
+            <thead>
+              <tr>
+                <th scope="col">PRODUCT</th>
+                <th scope="col">QUANTITY</th>
+                <th scope="col">PRICE</th>
+                <th scope="col">PRICE</th>
+                
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <th class="main-area d-flex" scope="row">
+                  <div><img src="pic/1.jpg" alt=""></div>
+                  <div><a href="#">Some name of item goes here nice</a>
+                  <p>Size: XL, Color: blue, <br>
+                    Brand: Gucci</p>
+                  </div>
+                </th>
+                <td ><button onclick="handelCount('shirt',false)" class="btn btn-outline-info"><i  class="fas fa-minus"></i>
+                </button><input class="input-value" id="shirt-count" type="number" value="1">
+                <button onclick="handelCount('shirt',true)" class="btn btn-outline-info"><i class="fas fa-plus"></i></button></td>
+                <td>
+                  <h6 id="shirt-amount">$1156.00</h6>
+                  <small>$315.20 each</small>
+                </td>
+                
+                <td class="d-flex heart-icon ">
+                  <a href="#"><i class="fas fa-heart "></i></a>
+                  <button type="button" class="btn btn-danger">Remove</button>
+                </td>
+              </tr>
+              <tr>
+                <th class="main-area d-flex" scope="row"><div><img src="pic/2.jpg" alt=""></div>
+                  <div><a href="#">Product name goes here nice</a>
+                  <p>Size: XL, Color: blue, <br>
+                    Brand: Gucci</p>
+                  </div></th>
+                <td>
+                  <button onclick="handelCount('jacket',false)" class="btn btn-outline-info"><i  class="fas fa-minus"></i></button>
+                  <input class="input-value" id="jacket-count" type="number" value="1">
+                  <button onclick="handelCount('jacket',true)" class="btn btn-outline-info"><i class="fas fa-plus"></i></button>
+                </td>
+                <td> <h6 id="jacket-amount">$1356.00</h6>
+                  <small>$315.20 each</small></td>
+                  <td class="d-flex heart-icon ">
+                    <a href="#"><i class="fas fa-heart "></i></a>
+                    <button type="button" class="btn btn-danger">Remove</button>
+                  </td>
+              </tr>
+              <tr>
+                <th class="main-area d-flex" scope="row"><div><img src="pic/3.jpg" alt=""></div>
+                  <div><a href="#">Product name goes here nice</a>
+                  <p>Size: XL, Color: blue, <br>
+                    Brand: Gucci</p>
+                  </div></th>
+                <td>
+                  <button onclick="handelCount('pants',false)" class="btn btn-outline-info"><i  class="fas fa-minus"></i></button>
+                  <input class="input-value" id="pants-count" type="number" value="1">
+                  <button onclick="handelCount('pants',true)" class="btn btn-outline-info"><i class="fas fa-plus"></i></button>
+                </td>
+                <td> <h6 id="pants-amount">$956.00</h6>
+                  <small>$315.20 each</small></td>
+                  <td class="d-flex heart-icon ">
+                    <a href="#"><i class="fas fa-heart "></i></a>
+                    <button type="button" class="btn btn-danger">Remove</button>
+                  </td>
+              </tr>
+            </tbody>
+          </table>
+          <div class="d-flex justify-content-between">
+            <button type="button" class="btn btn-secondary"> <i class="fa fa-chevron-left"></i> Continue shopping </button>
+          <button type="button" class="btn btn-primary"> Make Purchase </button>
+          </div>
+          <div class="alert alert-success mt-3" role="alert">
+            <i class="fas fa-truck m-2"></i>
+            Free Delivery within 1-2 weeks
+          </div>
+
+
+        </div>
+        <div class="col-lg-4">
+          <div class="coupon-area">
+            <h6>Have coupon?</h6>
+            <form class="d-flex">
+              <input id="input-coupon" class="form-control me-2" type="search" placeholder="Coupon code" aria-label="Search">
+              <button onclick="coupon()" class="btn btn-outline-success" type="submit">Apply</button>
+            </form>
+          </div>
+
+          <div>
+            <table class="price-table">
+              <tr class="price-area d-flex justify-content-between">
+                <td>Total price:</td>
+                <td id="total-price" class="text-right">USD 3468</td>
+              </tr>
+              <tr class="price-area d-flex justify-content-between">
+                <td>Discount:</td>
+                <td id="discount" class="text-right">USD  347</td>
+              </tr>
+              <tr class="price-area d-flex justify-content-between grand-total-class">
+                <td>Total:</td>
+                <td id="grand-total" class="text-right">$ 3121</td>
+              </tr>
+              
+              <!-- <hr>
+              <p><img src="pic/payments.png" alt=""></p> -->
+            </table>
+            <hr>
+              <p hight='26' class="text-center"><img src="pic/payments.png" alt=""></p>
+          </div>
+        </div>
+      </div>
+    </main>
+
+   <div class="bg-light py-5">
+    <div class="container">
+      <h6>Payment and refund policy</h6>
+      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+    </div>
+   </div>
+
+   <footer class="container d-flex justify-content-between p-4">
+     <p><a class="text-decoration-none" href="#">Terms and conditions</a></p>
+     <p>© Copyright 2019 All rights reserved</p>
+   </footer>
+
+
+   <script src="app.js"></script>
+</body>
+</html>
